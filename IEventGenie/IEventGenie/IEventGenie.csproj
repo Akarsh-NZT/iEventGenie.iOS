@@ -98,7 +98,7 @@
       <HintPath>..\packages\sqlite-net-pcl.1.0.11\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLite-net.dll</HintPath>
     </Reference>
     <Reference Include="Beaconstac">
-      <HintPath>..\..\..\Downloads\components\lib\ios\Beaconstac.dll</HintPath>
+      <HintPath>lib\ios\Beaconstac.dll</HintPath>
     </Reference>
     <Reference Include="zxing.portable">
       <HintPath>..\packages\ZXing.Net.Mobile.2.0.4.46\lib\Xamarin.iOS10\zxing.portable.dll</HintPath>
