@@ -41,11 +41,11 @@ namespace IEventGenie
 		{
 			try{
 
-				MenuViewCell cell = tableView.DequeueReusableCell (cellIdentifier) as MenuViewCell;
+				NotificationCell cell = tableView.DequeueReusableCell (cellIdentifier) as NotificationCell;
 
 
 				if (cell == null) {
-					cell = MenuViewCell.Create ();
+					cell = NotificationCell.Create ();
 				}
 
 				AttendeeCustomFieldSettingsModel childItem = tableItems [indexPath.Row];
@@ -56,7 +56,7 @@ namespace IEventGenie
 				return cell;
 			}
 			catch (Exception ex) {
-				return (MenuViewCell) tableView.DequeueReusableCell(MyEventCell.Key, indexPath)  ;
+				return (NotificationCell) tableView.DequeueReusableCell(NotificationCell.Key, indexPath)  ;
 			}
 
 		}

@@ -9,17 +9,25 @@ using System.CodeDom.Compiler;
 
 namespace IEventGenie
 {
-	[Register ("MenuDetailView")]
-	partial class MenuDetailView
+	[Register ("MenuDetailCell")]
+	partial class MenuDetailCell
 	{
 		[Outlet]
-		UIKit.UITableView menuTableSource { get; set; }
+		UIKit.UILabel name { get; set; }
+
+		[Outlet]
+		UIKit.UILabel value { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (menuTableSource != null) {
-				menuTableSource.Dispose ();
-				menuTableSource = null;
+			if (name != null) {
+				name.Dispose ();
+				name = null;
+			}
+
+			if (value != null) {
+				value.Dispose ();
+				value = null;
 			}
 		}
 	}

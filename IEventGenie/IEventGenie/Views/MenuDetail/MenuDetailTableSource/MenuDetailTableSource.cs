@@ -3,24 +3,21 @@ using UIKit;
 using Foundation;
 using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json.Linq;
 
 namespace IEventGenie
 {
-	public class MenuTableSource : UITableViewSource
+	public class MenuDetailTableSource : UITableViewSource
 	{
-		readonly string cellIdentifier = "MenuViewCell";
-
-		public GetAllEventAttendeeDetailByConfirmationCodeModel dataModel{ get; set;}
+		readonly string cellIdentifier = "MenuDetailCell";
 
 		protected List<CategoryTypesModel> tableItems;
 		CategoryTypesModel childItem ;
 
 		private NavController navController;
 
-		public MenuTableSource(GetAllEventAttendeeDetailByConfirmationCodeModel data)
+		public MenuDetailTableSource(GetAllEventAttendeeDetailByConfirmationCodeModel data)
 		{
-			dataModel = data;
+
 			SetDataOnTableSource(data);
 
 		}
@@ -32,11 +29,13 @@ namespace IEventGenie
 
 
 			tableItems = data.categoryTypes ;
-//			tableItems = tableItems.Where (p => p.isOn.Equals ("True")).ToList();
+
+		
 		}
 
 		public override nint RowsInSection (UITableView tableview, nint section)
 		{
+//			return 3;
 			if (tableItems == null)
 				return 0;
 
@@ -47,14 +46,14 @@ namespace IEventGenie
 		{
 			try{
 
-				MenuViewCell cell = tableView.DequeueReusableCell (cellIdentifier) as MenuViewCell;
+				MenuDetailCell cell = tableView.DequeueReusableCell (cellIdentifier) as MenuDetailCell;
 
 
 				if (cell == null) {
-					cell = MenuViewCell.Create ();
+					cell = MenuDetailCell.Create ();
 				}
 
-				 childItem = tableItems [indexPath.Row];
+				childItem = tableItems [indexPath.Row];
 
 				cell.dataModel = childItem;
 				cell.Binding();
@@ -62,19 +61,13 @@ namespace IEventGenie
 				return cell;
 			}
 			catch (Exception ex) {
-				return (MenuViewCell) tableView.DequeueReusableCell(MenuViewCell.Key, indexPath)  ;
+				return (MenuDetailCell) tableView.DequeueReusableCell(MenuDetailCell.Key, indexPath)  ;
 			}
 
 		}
 
-		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
-		{
 
-			NSNotificationCenter.DefaultCenter.PostNotificationName ("ShowMenuDetailPage", null);
-			tableView.DeselectRow (indexPath, true);
-			
-		}
-			
+
 
 	}
 }

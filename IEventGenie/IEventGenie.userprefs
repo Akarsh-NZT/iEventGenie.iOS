@@ -1,12 +1,16 @@
 ﻿<Properties StartupItem="IEventGenie/IEventGenie.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6s.9.1" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="IEventGenie/Controller/CardViewConroller.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.iPhone_6" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="IEventGenie/Views/MenuViewController/MenuTableSource.cs">
     <Files>
-      <File FileName="IEventGenie/AppDelegate.cs" Line="1" Column="1" />
-      <File FileName="IEventGenie/Managers/BeaconsManager.cs" Line="1" Column="1" />
-      <File FileName="IEventGenie/Controller/CardViewConroller.cs" Line="13" Column="18" />
-      <File FileName="IEventGenie/Views/MenuDetail/MenuDetailView.cs" Line="1" Column="1" />
-      <File FileName="IEventGenie/Views/Dashboard/DashboardController.cs" Line="1" Column="1" />
+      <File FileName="IEventGenie/Views/MenuViewController/MenuViewCell.cs" Line="10" Column="3" />
+      <File FileName="IEventGenie/Model/AttendeeCustomFieldSettingsModel.cs" Line="1" Column="1" />
+      <File FileName="IEventGenie/Model/CategoryTypesModel.cs" Line="8" Column="30" />
+      <File FileName="IEventGenie/Views/MenuViewController/MenuTableSource.cs" Line="77" Column="1" />
+      <File FileName="IEventGenie/Model/GetAllEventAttendeeDetailByConfirmationCodeModel.cs" Line="60" Column="33" />
+      <File FileName="IEventGenie/Views/MenuViewController/MenuViewController.cs" Line="1" Column="1" />
+      <File FileName="IEventGenie/Views/Notification/NotificationTableSource/NotificationTableSource.cs" Line="59" Column="77" />
+      <File FileName="IEventGenie/Views/Notification/NotificationCell/NotificationCell.cs" Line="12" Column="72" />
+      <File FileName="IEventGenie/Helper/DataParser.cs" Line="902" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

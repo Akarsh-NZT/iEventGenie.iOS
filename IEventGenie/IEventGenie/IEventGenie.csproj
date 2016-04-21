@@ -127,6 +127,7 @@
     <InterfaceDefinition Include="Views\BeaconView\BeaconView.xib" />
     <InterfaceDefinition Include="PushwooshSampleViewController.xib" />
     <InterfaceDefinition Include="Views\Notification\NotificationCell\NotificationCell.xib" />
+    <InterfaceDefinition Include="Views\MenuDetail\MenuDetailCell\MenuDetailCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -225,6 +226,11 @@
     <Compile Include="Service\ICheckOutWithConfirmationService.cs" />
     <Compile Include="Controller\webViewController.cs" />
     <Compile Include="Controller\CardViewConroller.cs" />
+    <Compile Include="Views\MenuDetail\MenuDetailCell\MenuDetailCell.cs" />
+    <Compile Include="Views\MenuDetail\MenuDetailCell\MenuDetailCell.designer.cs">
+      <DependentUpon>MenuDetailCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MenuDetail\MenuDetailTableSource\MenuDetailTableSource.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -245,6 +251,8 @@
     <Folder Include="Views\Notification\NotificationCell\" />
     <Folder Include="Views\Notification\NotificationTableSource\" />
     <Folder Include="Managers\" />
+    <Folder Include="Views\MenuDetail\MenuDetailTableSource\" />
+    <Folder Include="Views\MenuDetail\MenuDetailCell\" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="SidebarNavigation">

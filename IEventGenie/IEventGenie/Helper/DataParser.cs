@@ -878,7 +878,7 @@ namespace IEventGenie
 						if (IsKeyExist (AppConstant.CHILDREN, indict)) {
 							string childArray = "" + GetData (AppConstant.CHILDREN, indict);
 
-							ChildrenModel cModel = new ChildrenModel();
+
 
 							JArray cJar = indict [AppConstant.CHILDREN] as JArray;
 
@@ -886,8 +886,9 @@ namespace IEventGenie
 
 								JObject cobj = cJar [c] as JObject;
 
-								Dictionary<string,object> cdict = inobj.ToObject<Dictionary<string,object>> ();
+								Dictionary<string,object> cdict = cobj.ToObject<Dictionary<string,object>> ();
 
+								ChildrenModel cModel = new ChildrenModel();
 
 								if (IsKeyExist (AppConstant.ID, cdict))
 									cModel.ID = GetData (AppConstant.ID, cdict);
@@ -895,7 +896,10 @@ namespace IEventGenie
 								if (IsKeyExist (AppConstant.TEXT, cdict))
 									cModel.Text = GetData (AppConstant.TEXT, cdict);
 
-								inmodel.Children = cModel;
+								if (inmodel.Children == null)
+									inmodel.Children = new List<ChildrenModel> ();
+								
+								inmodel.Children.Add(cModel);
 
 							}
 						}

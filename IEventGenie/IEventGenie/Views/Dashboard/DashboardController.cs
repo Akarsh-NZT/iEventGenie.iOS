@@ -112,24 +112,21 @@ namespace IEventGenie
 
 		void AddObserver()
 		{
-			NSNotificationCenter.DefaultCenter.AddObserver(new NSString("ShowMyNotification"),OnEventDetailRowTapped);
+			NSNotificationCenter.DefaultCenter.AddObserver(new NSString("ShowMenuDetailPage"),OnEventDetailRowTapped);
 		}
 
 		void RemoveObserver()
 		{
-			NSNotificationCenter.DefaultCenter.RemoveObserver(new NSString("ShowMyNotification"));
+			NSNotificationCenter.DefaultCenter.RemoveObserver(new NSString("ShowMenuDetailPage"));
 		}
 
 		void OnEventDetailRowTapped(NSNotification notify)
 		{
 			menuDetailView = new MenuDetailView();
 
-//						this.InvokeOnMainThread(() => {
-//							var av = new UIAlertView("UnderDevelopment", "", null, "OK", null);
-//							av.Show();
-//						});
+			menuDetailView.attendeeDetailData = attendeeDetailData;
+
 			this.NavigationController.PushViewController (menuDetailView,true);
-//			SidebarController.ChangeContentView(notificationView);
 		}
 
 

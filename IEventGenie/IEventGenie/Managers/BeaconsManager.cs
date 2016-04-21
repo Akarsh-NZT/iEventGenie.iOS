@@ -34,15 +34,17 @@ namespace IEventGenie
 		public void BeaconSearch()
 		{
 			bstac = Beaconstac.SharedInstanceWithOrganizationId (1018,"349f884991f08ea9ddfa4503c983f40a19ac4984");
-			bstac.AllowRangingInBackground = true;
+			if (bstac != null) {
+				bstac.AllowRangingInBackground = true;
 
-			bstacDelegate = new MyBeaconstacDelegate ();
-			bstac.Delegate = bstacDelegate;
+				bstacDelegate = new MyBeaconstacDelegate ();
+				bstac.Delegate = bstacDelegate;
 
 
-			// Starts ranging beacons with given UUID and a string as region identifier
-			var options = new NSDictionary ("myBeacons", true);
-			bstac.StartRangingBeaconsWithUUIDString ("F94DBB23-2266-7822-3782-57BEAC0952AC","MobstacRegion",options);
+				// Starts ranging beacons with given UUID and a string as region identifier
+				var options = new NSDictionary ("myBeacons", true);
+				bstac.StartRangingBeaconsWithUUIDString ("F94DBB23-2266-7822-3782-57BEAC0952AC", "MobstacRegion", options);
+			}
 		}
 
 		class MyBeaconstacDelegate : BeaconstacDelegate 

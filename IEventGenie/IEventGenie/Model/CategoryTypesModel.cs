@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace IEventGenie
 {
 	public class CategoryTypesModel
 	{
-		public ChildrenModel Children{get; set;}
+		public List<ChildrenModel> Children{get; set;}
 		public string ID { get; set;}
 		public string Text { get; set;}
 	}

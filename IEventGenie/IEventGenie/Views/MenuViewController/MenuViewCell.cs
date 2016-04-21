@@ -7,7 +7,7 @@ namespace IEventGenie
 {
 	public partial class MenuViewCell : UITableViewCell
 	{
-		public AttendeeCustomFieldSettingsModel dataModel{ get; set;}
+		public CategoryTypesModel dataModel{ get; set;}
 
 		public static readonly NSString Key = new NSString ("MenuViewCell");
 		public static readonly UINib Nib = UINib.FromName ("MenuViewCell", NSBundle.MainBundle);
@@ -24,7 +24,7 @@ namespace IEventGenie
 		public void Binding()
 		{
 			
-			menuName.Text = dataModel.fieldName;
+			menuName.Text = dataModel.Text;
 			
 
 		}
